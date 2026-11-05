@@ -1,0 +1,10 @@
+name: hmmer
+channels:
+  - default
+dependencies:
+  - pip
+  - pip:
+      - biopython
+      - pyhmmer==0.10.15
+      - pandas
+      - numpy
