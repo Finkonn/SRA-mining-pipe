@@ -101,7 +101,7 @@ rule hmm_scan:
     threads: 16
     priority: 4
     conda:
-        "envs/hmm_scan.yaml"
+        "envs/hmmer.yaml"
     shell:
         """
         python scripts/analyze_seq_hmm.py \
@@ -127,7 +127,7 @@ rule generate_hmm_report:
         score_ratio = 0.5,
     priority: 5
     conda:
-        "envs/plot_hmm.yaml"
+        "envs/hmmer.yaml"
     shell:
         """
         mkdir -p {OUTPUT_DIR}/hmm_reports
@@ -179,7 +179,7 @@ rule analyze_diamond:
         annot = os.path.join(OUTPUT_DIR, "diamond/{sample}_annotated_blast.tsv"),
     priority: 5
     conda:
-        "envs/plot_hmm.yaml"
+        "envs/hmmer.yaml"
     shell:
         """
         python scripts/analyze_diamond.py \
